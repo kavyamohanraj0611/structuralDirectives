@@ -1,0 +1,27 @@
+<h1>Directives</h1>
+
+<!-- <ng-template [ngIf]="users"> -->
+<div *ngIf="users ;else templateName">
+    <div *ngFor="let index of users;index as i;first as isFirst;last as islast;even as evenNum;odd as oddNum">
+      <div [ngSwitch]="index.gender">
+        <div class="female" *ngSwitchCase="'female'">
+          Index:{{i}} ---
+          Name:{{index.name}} --- 
+          First:{{isFirst}} ---
+          Last:{{islast}}---
+          Even:{{evenNum}}---
+          Odd:{{oddNum}}
+        </div>
+        <div class="male" *ngSwitchCase="'male'">
+          Index:{{i}} ---
+          Name:{{index.name}} ---
+          First:{{isFirst}} ---
+          Last:{{islast}}---
+          Even:{{evenNum}}---
+          Odd:{{oddNum}}
+        </div>
+      </div>
+    </div>
+</div>
+<ng-template #templateName>Array is empty / Can't display details <ng-template>
+<!-- </ng-template> -->
